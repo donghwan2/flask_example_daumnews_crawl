@@ -4,9 +4,9 @@ from bs4 import BeautifulSoup
 from openpyxl import Workbook
 import pandas as pd
 
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-import chromedriver_autoinstaller
+# from selenium import webdriver
+# from selenium.webdriver.common.keys import Keys
+# import chromedriver_autoinstaller
 import time
 
 # # 엑셀 쓰기 위한 준비
@@ -48,18 +48,18 @@ def result():
     return render_template("result.html", daum_list=daum_list)
 
 # 네이버 쇼핑 크롤링
-@app.route('/naver_shopping')
-def naver_shopping():
-    # 셀레니움 크롤링
-    chrome_path = chromedriver_autoinstaller.install()
-    driver = webdriver.Chrome(chrome_path)
-    driver.implicitly_wait(3)
+# @app.route('/naver_shopping')
+# def naver_shopping():
+#     # 셀레니움 크롤링
+#     chrome_path = chromedriver_autoinstaller.install()
+#     driver = webdriver.Chrome(chrome_path)
+#     driver.implicitly_wait(3)
 
-    driver.get("https://search.shopping.naver.com/search/all?query=%EB%A7%8C%EB%91%90&frm=NVSHATC&prevQuery=%EB%A7%8C%EB%91%90")
-    soup = BeautifulSoup(driver.page_source, 'html.parser')
-    print(soup)
+#     driver.get("https://search.shopping.naver.com/search/all?query=%EB%A7%8C%EB%91%90&frm=NVSHATC&prevQuery=%EB%A7%8C%EB%91%90")
+#     soup = BeautifulSoup(driver.page_source, 'html.parser')
+#     print(soup)
 
-    return render_template("shopping.html")
+#     return render_template("shopping.html")
 
 if __name__ == '__main__':
     app.run()
