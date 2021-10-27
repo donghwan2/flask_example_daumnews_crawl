@@ -12,6 +12,7 @@ openpyxl = "*"
 pandas = "*"
 selenium = "*"
 chromedriver-autoinstaller = "*"
+gunicorn = "*"
 
 [dev-packages]
 
